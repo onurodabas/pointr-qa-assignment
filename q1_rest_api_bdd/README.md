@@ -129,17 +129,7 @@ The project covers 22 scenarios across 3 features:
 
 **Level (6 scenarios):** import single, import multiple, default floor_number, missing name (partial success), invalid building_id (partial success), mixed valid/invalid import.
 
-## Design Decisions
 
-**In-memory storage.** The API uses Python dictionaries instead of a database. This keeps the project focused on the API and testing layer. In production, I would replace this with PostgreSQL via SQLAlchemy.
-
-**UUIDs for IDs.** UUIDs avoid collisions and don't expose internal counters. An auto-increment integer would be simpler but reveals creation order and total count.
-
-**Optional fields with defaults.** `description` defaults to empty string, `floors` defaults to 1, `floor_number` defaults to 0. The API always returns these fields, so clients get a consistent response shape.
-
-**Partial success for level import.** When importing multiple levels, valid ones are created even if some fail validation. The response separates `created` and `errors` lists. This is important for bulk operations where rejecting the entire batch over one bad row is wasteful.
-
-**Referential integrity check.** Creating a building requires a valid `site_id`; creating a level requires a valid `building_id`. The API returns 404 if the referenced resource doesn't exist.
 
 ## CI/CD
 

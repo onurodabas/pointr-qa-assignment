@@ -97,22 +97,7 @@ Top 5 Most Frequent Words:
   ...
 ```
 
-## Design Decisions
 
-**Why "Read more" link as the article selector?**
-Every article card on the Pointr blog has a "Read more" link, and this text doesn't appear in the navigation or footer. It's a more reliable selector than CSS classes, which tend to be auto-generated and change between site versions.
-
-**Why skip the Featured article when picking the "latest 3"?**
-The Featured article is a pinned/highlighted post, not necessarily the most recent. The task asks for the latest 3, so I take the first 3 articles from the "Latest" section instead.
-
-**Why filter stop words?**
-Without filtering, the top 5 in every article would be "the", "and", "to", "of", "is" — which tells us nothing about the article. Filtering common stop words gives us meaningful, content-specific words like "maps", "wayfinding", "stadium", etc.
-
-**Why a fresh browser per scenario?**
-Each scenario starts a new browser instance and quits it after. This isolates tests from each other so that cookies, cache, or leftover state from one test can't affect another. Slightly slower, but much more reliable.
-
-**Why text from `<body>` instead of a specific article container?**
-A specific container would be cleaner, but Pointr's blog uses generic class names that may change. Reading from `<body>` is robust across layout changes; the stop word filter compensates for the extra navigation/footer text.
 
 ## CI/CD
 
