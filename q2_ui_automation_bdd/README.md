@@ -118,12 +118,5 @@ A specific container would be cleaner, but Pointr's blog uses generic class name
 
 The GitHub Actions workflow uses a matrix strategy to run the tests in parallel on both Chrome and Firefox. Output files are uploaded as artifacts so you can download the generated reports from the Actions tab.
 
-## What I'd Improve
 
-- **Page Object Model**: Extract selectors into page classes for maintainability
-- **Explicit waits everywhere**: Replace the `time.sleep(2)` fallback with proper expected conditions
-- **Headless mode in CI**: Currently relies on the CI environment's display; explicit headless flags would be cleaner
-- **Stemming/lemmatization**: "map" and "maps" are counted separately right now
-- **Cross-browser grid**: BrowserStack or Sauce Labs for testing on more browser/OS combinations
-- **Visual regression**: Tools like Percy or Applitools to catch UI changes
 

@@ -145,14 +145,5 @@ The project covers 22 scenarios across 3 features:
 
 GitHub Actions workflow (`.github/workflows/bdd-tests.yml`) runs on every push and pull request. It installs dependencies, runs the BDD tests, and uploads logs on failure.
 
-## What I'd Improve in Production
 
-- Replace in-memory storage with PostgreSQL + SQLAlchemy
-- Add request validation with Pydantic / marshmallow
-- Add OpenAPI/Swagger documentation
-- Add authentication (JWT or API keys)
-- Add rate limiting
-- Structured logging with correlation IDs
-- Containerize with Docker, deploy with Gunicorn behind Nginx
-- Add integration tests against a real database instance
 
