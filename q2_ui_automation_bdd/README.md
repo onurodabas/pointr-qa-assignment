@@ -126,3 +126,4 @@ The GitHub Actions workflow uses a matrix strategy to run the tests in parallel 
 - **Stemming/lemmatization**: "map" and "maps" are counted separately right now
 - **Cross-browser grid**: BrowserStack or Sauce Labs for testing on more browser/OS combinations
 - **Visual regression**: Tools like Percy or Applitools to catch UI changes
+

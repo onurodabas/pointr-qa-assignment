@@ -155,3 +155,4 @@ GitHub Actions workflow (`.github/workflows/bdd-tests.yml`) runs on every push a
 - Structured logging with correlation IDs
 - Containerize with Docker, deploy with Gunicorn behind Nginx
 - Add integration tests against a real database instance
+
